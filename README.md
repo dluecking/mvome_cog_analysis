@@ -6,24 +6,28 @@ UNZIPPED!
 - 1M subsamples of the tara oceans microbial fraction of each of the three stations
 
 
-
 **peDNA reads (unzipped):**
 - heligoland peDNA reads that ran through mviest and were marked as "true.mvome" from the four samples (the four CsCl ones) combined into on sample.
 - tara oceans virome fraction for the 9 stations
 
 
-## runs the following steps one after another:
+**sorted MAGs according to type:**
+- run
+```R
+Rscript scripts/concatenate_MAGs_by_type.R
+```
+
+## this pipeline then runs the following steps one after another:
 1. subsample reads
 2. zip subsampled reads
-3. collect MAGs by type and combine
-4. map reads to contigs
-5. unzip mapped reads
-6. run fraggenescan on mapped reads
-7. blast fragments against COG
-8. run fraggenescan on microbial reads
-9. blast microbial fragments against COG
-10. collect the blast data
-11. plot
+3. map reads to contigs
+4. unzip mapped reads
+5. run fraggenescan on mapped reads
+6. blast fragments against COG
+7. run fraggenescan on microbial reads
+8. blast microbial fragments against COG
+9. collect the blast data
+10. plot
 
 ## needed programs:
 - seqtk
@@ -38,7 +42,8 @@ UNZIPPED!
 	- library(ggplot2)
 	- library(dplyr)
 	- library(ggpubr)
-
+- python with:
+	- pandas
 
 ## setting up conda env:
 ```bash

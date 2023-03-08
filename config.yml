@@ -1,5 +1,5 @@
 sbatch_mem: "20G"
-sbatch_cpus: "16"
+sbatch_cpus: "8"
 sbatch_time: "04:00:00"
 top20_df: "input/top20_df.tsv"
 MIN_MAPPING_ID: 0.9

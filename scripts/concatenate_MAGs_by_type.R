@@ -31,5 +31,5 @@ for(i in 1:nrow(top20_df)){
 
     contig_file <- list.files("input/MAGs",
                               pattern = current_shortname, full.names = TRUE)
-    system(paste0("cat ", contig_file, " >> intermediate/MAGs_sorted/", current_station, "_combined_", current_label, "_contigs.fa"))
+    system(paste0("cat ", contig_file, " >> input/MAGs_sorted/", current_station, "_combined_", current_label, "_contigs.fa"))
 }
