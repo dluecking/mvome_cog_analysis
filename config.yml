@@ -1,0 +1,6 @@
+top20_df: "input-data - top20_combined.tsv"
+COG_DB_PATH: "here"
+SUBSAMPLE_SIZE: 10000
+samples:
+- heligoland
+- 158_SRF
