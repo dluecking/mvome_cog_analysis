@@ -3,7 +3,7 @@ sbatch_cpus: "16"
 sbatch_time: "04:00:00"
 top20_df: "input/top20_df.tsv"
 MIN_MAPPING_ID: 0.9
-COG_DB_PATH: "here"
+COG_DB_PATH: "~/bioinf/dbs/COGdb/dmnd_db/combined_COG.dmnd"
 SUBSAMPLE_SIZE: 10000
 samples:
 - heligoland

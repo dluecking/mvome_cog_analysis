@@ -1,10 +1,13 @@
 # mvome_cog_analysis
 ## input needed:
-**microbial reads:**
+**microbial reads (zipped):**
+UNZIPPED!
 - heligoland reads, which are a subsample (1M reads each pair), of the 4 heligoland filter samples (H_022, H_045, H_080, H_300), where we subsampled 250k reads from each.
 - 1M subsamples of the tara oceans microbial fraction of each of the three stations
 
-**peDNA reads:**
+
+
+**peDNA reads (unzipped):**
 - heligoland peDNA reads that ran through mviest and were marked as "true.mvome" from the four samples (the four CsCl ones) combined into on sample.
 - tara oceans virome fraction for the 9 stations
 
