@@ -39,6 +39,7 @@ Rscript scripts/concatenate_MAGs_by_type.R
 	- ggplot2
 	- dplyr
 	- ggpubr
+	- svglite
 - python with:
 	- pandas
 
@@ -46,7 +47,7 @@ Rscript scripts/concatenate_MAGs_by_type.R
 Install with:
 ```bash
 conda install -y -c bioconda fraggenescan diamond bbmap seqtk
-conda install -y -c conda-forge r-data.table r-ggplot2 r-dplyr r-ggpubr
+conda install -y -c conda-forge r-data.table r-ggplot2 r-dplyr r-ggpubr r-svglite
 conda install -y -c r r-stringr
 conda install -y -c anaconda pandas
 ```

@@ -1,0 +1,927 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cluster nodes: 16
+Job stats:
+job                                    count    min threads    max threads
+-----------------------------------  -------  -------------  -------------
+all                                        1              1              1
+blast_microbial                           20              1              1
+blast_peDNA                               44              1              1
+collect_blast_out_data                     1              1              1
+convert_fastq_to_fasta                    44              8              8
+fraggenescane_microbial                   20              1              1
+fraggenescane_peDNA                       44              1              1
+map_subsampled_reads_to_sorted_MAGs       22              1              1
+plotting                                   1              1              1
+subsample_reads                           10              8              8
+unzip_mapped_reads                        44              8              8
+zip_peDNA_subsamples                      10              8              8
+total                                    261              1              8
+
+Select jobs to execute...
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/122_MES_true.mvome.reads1.fq.gz, input/reads/122_MES_true.mvome.reads2.fq.gz
+    output: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.122_MES.log
+    jobid: 78
+    reason: Missing output files: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq
+    wildcards: sample=122_MES
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/122_MES_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/122_MES_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/122_MES_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/122_MES_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/158_MES_true.mvome.reads1.fq.gz, input/reads/158_MES_true.mvome.reads2.fq.gz
+    output: intermediate/reads/158_MES_true.mvome.reads1.subsample.fq, intermediate/reads/158_MES_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.158_MES.log
+    jobid: 138
+    reason: Missing output files: intermediate/reads/158_MES_true.mvome.reads1.subsample.fq, intermediate/reads/158_MES_true.mvome.reads2.subsample.fq
+    wildcards: sample=158_MES
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/158_MES_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/158_MES_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/158_MES_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/158_MES_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/64_MES_true.mvome.reads1.fq.gz, input/reads/64_MES_true.mvome.reads2.fq.gz
+    output: intermediate/reads/64_MES_true.mvome.reads1.subsample.fq, intermediate/reads/64_MES_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.64_MES.log
+    jobid: 207
+    reason: Missing output files: intermediate/reads/64_MES_true.mvome.reads2.subsample.fq, intermediate/reads/64_MES_true.mvome.reads1.subsample.fq
+    wildcards: sample=64_MES
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/64_MES_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/64_MES_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/64_MES_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/64_MES_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/64_DCM_true.mvome.reads1.fq.gz, input/reads/64_DCM_true.mvome.reads2.fq.gz
+    output: intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq, intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.64_DCM.log
+    jobid: 187
+    reason: Missing output files: intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq, intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq
+    wildcards: sample=64_DCM
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/64_DCM_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/64_DCM_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/158_DCM_true.mvome.reads1.fq.gz, input/reads/158_DCM_true.mvome.reads2.fq.gz
+    output: intermediate/reads/158_DCM_true.mvome.reads1.subsample.fq, intermediate/reads/158_DCM_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.158_DCM.log
+    jobid: 127
+    reason: Missing output files: intermediate/reads/158_DCM_true.mvome.reads2.subsample.fq, intermediate/reads/158_DCM_true.mvome.reads1.subsample.fq
+    wildcards: sample=158_DCM
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/158_DCM_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/158_DCM_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/158_DCM_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/158_DCM_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/122_DCM_true.mvome.reads1.fq.gz, input/reads/122_DCM_true.mvome.reads2.fq.gz
+    output: intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq, intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.122_DCM.log
+    jobid: 49
+    reason: Missing output files: intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq, intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq
+    wildcards: sample=122_DCM
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/122_DCM_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/122_DCM_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/heligoland_true.mvome.reads1.fq.gz, input/reads/heligoland_true.mvome.reads2.fq.gz
+    output: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.heligoland.log
+    jobid: 238
+    reason: Missing output files: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq
+    wildcards: sample=heligoland
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/heligoland_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/heligoland_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/heligoland_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/heligoland_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/158_SRF_true.mvome.reads1.fq.gz, input/reads/158_SRF_true.mvome.reads2.fq.gz
+    output: intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.158_SRF.log
+    jobid: 158
+    reason: Missing output files: intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq
+    wildcards: sample=158_SRF
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/158_SRF_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/158_SRF_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/64_SRF_true.mvome.reads1.fq.gz, input/reads/64_SRF_true.mvome.reads2.fq.gz
+    output: intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.64_SRF.log
+    jobid: 218
+    reason: Missing output files: intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq, intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq
+    wildcards: sample=64_SRF
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/64_SRF_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/64_SRF_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+localrule subsample_reads:
+    input: input/reads/122_SRF_true.mvome.reads1.fq.gz, input/reads/122_SRF_true.mvome.reads2.fq.gz
+    output: intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq
+    log: log/subsample_reads.122_SRF.log
+    jobid: 107
+    reason: Missing output files: intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq
+    wildcards: sample=122_SRF
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk sample -s seed=100 input/reads/122_SRF_true.mvome.reads1.fq.gz 1000000         > intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq
+        
+        seqtk sample -s seed=100 input/reads/122_SRF_true.mvome.reads2.fq.gz 1000000         > intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:27:09 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/heligoland_microbial.reads2.1M.fa
+    output: intermediate/protein_fragments/microbial/heligoland_microbial_fraggene_r2.faa
+    jobid: 6
+    reason: Missing output files: intermediate/protein_fragments/microbial/heligoland_microbial_fraggene_r2.faa
+    wildcards: sample=heligoland, read=2
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/heligoland_microbial.reads2.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/heligoland_microbial_fraggene_r2 -thread=8
+        
+Submitted job 6 with external jobid 'Submitted batch job 56633'.
+
+[Thu Mar  9 14:27:09 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/158_SRF_microbial.reads2.1M.fa
+    output: intermediate/protein_fragments/microbial/158_SRF_microbial_fraggene_r2.faa
+    jobid: 30
+    reason: Missing output files: intermediate/protein_fragments/microbial/158_SRF_microbial_fraggene_r2.faa
+    wildcards: sample=158_SRF, read=2
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/158_SRF_microbial.reads2.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/158_SRF_microbial_fraggene_r2 -thread=8
+        
+Submitted job 30 with external jobid 'Submitted batch job 56634'.
+
+[Thu Mar  9 14:27:09 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/122_MES_microbial.reads2.1M.fa
+    output: intermediate/protein_fragments/microbial/122_MES_microbial_fraggene_r2.faa
+    jobid: 14
+    reason: Missing output files: intermediate/protein_fragments/microbial/122_MES_microbial_fraggene_r2.faa
+    wildcards: sample=122_MES, read=2
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/122_MES_microbial.reads2.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/122_MES_microbial_fraggene_r2 -thread=8
+        
+Submitted job 14 with external jobid 'Submitted batch job 56635'.
+
+[Thu Mar  9 14:27:09 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/158_DCM_microbial.reads2.1M.fa
+    output: intermediate/protein_fragments/microbial/158_DCM_microbial_fraggene_r2.faa
+    jobid: 22
+    reason: Missing output files: intermediate/protein_fragments/microbial/158_DCM_microbial_fraggene_r2.faa
+    wildcards: sample=158_DCM, read=2
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/158_DCM_microbial.reads2.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/158_DCM_microbial_fraggene_r2 -thread=8
+        
+Submitted job 22 with external jobid 'Submitted batch job 56636'.
+
+[Thu Mar  9 14:27:09 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/122_SRF_microbial.reads2.1M.fa
+    output: intermediate/protein_fragments/microbial/122_SRF_microbial_fraggene_r2.faa
+    jobid: 18
+    reason: Missing output files: intermediate/protein_fragments/microbial/122_SRF_microbial_fraggene_r2.faa
+    wildcards: sample=122_SRF, read=2
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/122_SRF_microbial.reads2.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/122_SRF_microbial_fraggene_r2 -thread=8
+        
+Submitted job 18 with external jobid 'Submitted batch job 56637'.
+
+[Thu Mar  9 14:27:09 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/158_DCM_microbial.reads1.1M.fa
+    output: intermediate/protein_fragments/microbial/158_DCM_microbial_fraggene_r1.faa
+    jobid: 20
+    reason: Missing output files: intermediate/protein_fragments/microbial/158_DCM_microbial_fraggene_r1.faa
+    wildcards: sample=158_DCM, read=1
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/158_DCM_microbial.reads1.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/158_DCM_microbial_fraggene_r1 -thread=8
+        
+Submitted job 20 with external jobid 'Submitted batch job 56638'.
+[Thu Mar  9 14:27:35 2023]
+Finished job 187.
+1 of 261 steps (0.4%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:27:35 2023]
+localrule zip_peDNA_subsamples:
+    input: intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq, intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq
+    output: intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq.gz, intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq.gz
+    jobid: 186
+    reason: Missing output files: intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq.gz, intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq.gz; Input files updated by another job: intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq, intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq
+    wildcards: sample=64_DCM
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gzip intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq
+        gzip intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq
+        
+[Thu Mar  9 14:27:38 2023]
+Finished job 49.
+2 of 261 steps (1%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:27:38 2023]
+localrule zip_peDNA_subsamples:
+    input: intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq, intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq
+    output: intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq.gz
+    jobid: 48
+    reason: Missing output files: intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq.gz; Input files updated by another job: intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq, intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq
+    wildcards: sample=122_DCM
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gzip intermediate/reads/122_DCM_true.mvome.reads1.subsample.fq
+        gzip intermediate/reads/122_DCM_true.mvome.reads2.subsample.fq
+        
+[Thu Mar  9 14:27:52 2023]
+Finished job 107.
+3 of 261 steps (1%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:27:52 2023]
+localrule zip_peDNA_subsamples:
+    input: intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq
+    output: intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq.gz
+    jobid: 106
+    reason: Missing output files: intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq.gz, intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq.gz; Input files updated by another job: intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq
+    wildcards: sample=122_SRF
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gzip intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq
+        gzip intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq
+        
+[Thu Mar  9 14:28:08 2023]
+Finished job 218.
+4 of 261 steps (2%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:28:08 2023]
+localrule zip_peDNA_subsamples:
+    input: intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq
+    output: intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq.gz, intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq.gz
+    jobid: 217
+    reason: Missing output files: intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq.gz, intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq.gz; Input files updated by another job: intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq, intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq
+    wildcards: sample=64_SRF
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gzip intermediate/reads/64_SRF_true.mvome.reads1.subsample.fq
+        gzip intermediate/reads/64_SRF_true.mvome.reads2.subsample.fq
+        
+[Thu Mar  9 14:28:17 2023]
+Finished job 238.
+5 of 261 steps (2%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:28:17 2023]
+localrule zip_peDNA_subsamples:
+    input: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq
+    output: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq.gz, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq.gz
+    jobid: 237
+    reason: Missing output files: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq.gz, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq.gz; Input files updated by another job: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq
+    wildcards: sample=heligoland
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gzip intermediate/reads/heligoland_true.mvome.reads1.subsample.fq
+        gzip intermediate/reads/heligoland_true.mvome.reads2.subsample.fq
+        
+[Thu Mar  9 14:28:37 2023]
+Finished job 186.
+6 of 261 steps (2%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:28:37 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/122_DCM_microbial.reads1.1M.fa
+    output: intermediate/protein_fragments/microbial/122_DCM_microbial_fraggene_r1.faa
+    jobid: 8
+    reason: Missing output files: intermediate/protein_fragments/microbial/122_DCM_microbial_fraggene_r1.faa
+    wildcards: sample=122_DCM, read=1
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/122_DCM_microbial.reads1.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/122_DCM_microbial_fraggene_r1 -thread=8
+        
+Submitted job 8 with external jobid 'Submitted batch job 56639'.
+[Thu Mar  9 14:28:37 2023]
+Finished job 48.
+7 of 261 steps (3%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:28:37 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/64_MES_microbial.reads2.1M.fa
+    output: intermediate/protein_fragments/microbial/64_MES_microbial_fraggene_r2.faa
+    jobid: 38
+    reason: Missing output files: intermediate/protein_fragments/microbial/64_MES_microbial_fraggene_r2.faa
+    wildcards: sample=64_MES, read=2
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/64_MES_microbial.reads2.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/64_MES_microbial_fraggene_r2 -thread=8
+        
+Submitted job 38 with external jobid 'Submitted batch job 56640'.
+[Thu Mar  9 14:28:47 2023]
+Finished job 106.
+8 of 261 steps (3%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:28:47 2023]
+rule fraggenescane_microbial:
+    input: input/microbial_reads/158_SRF_microbial.reads1.1M.fa
+    output: intermediate/protein_fragments/microbial/158_SRF_microbial_fraggene_r1.faa
+    jobid: 28
+    reason: Missing output files: intermediate/protein_fragments/microbial/158_SRF_microbial_fraggene_r1.faa
+    wildcards: sample=158_SRF, read=1
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        run_FragGeneScan.pl -genome=input/microbial_reads/158_SRF_microbial.reads1.1M.fa -complete=0 -train=illumina_5         -out intermediate/protein_fragments/microbial/158_SRF_microbial_fraggene_r1 -thread=8
+        
+Submitted job 28 with external jobid 'Submitted batch job 56641'.
+[Thu Mar  9 14:29:02 2023]
+Finished job 78.
+9 of 261 steps (3%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:29:02 2023]
+localrule zip_peDNA_subsamples:
+    input: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq
+    output: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq.gz
+    jobid: 77
+    reason: Missing output files: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq.gz; Input files updated by another job: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq
+    wildcards: sample=122_MES
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gzip intermediate/reads/122_MES_true.mvome.reads1.subsample.fq
+        gzip intermediate/reads/122_MES_true.mvome.reads2.subsample.fq
+        
+[Thu Mar  9 14:29:02 2023]
+Finished job 217.
+10 of 261 steps (4%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:29:02 2023]
+rule map_subsampled_reads_to_sorted_MAGs:
+    input: intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq.gz, input/MAGs_sorted/122_SRF_combined_viral_contigs.fa
+    output: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq.gz, intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq.gz
+    jobid: 116
+    reason: Missing output files: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq.gz, intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq.gz; Input files updated by another job: intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq.gz, intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq.gz
+    wildcards: sample=122_SRF, label=viral
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        bbmap.sh         ref=input/MAGs_sorted/122_SRF_combined_viral_contigs.fa         in=intermediate/reads/122_SRF_true.mvome.reads1.subsample.fq.gz in2=intermediate/reads/122_SRF_true.mvome.reads2.subsample.fq.gz         outm=intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq.gz outm2=intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq.gz          minidentity=0.9         nodisk
+        
+Submitted job 116 with external jobid 'Submitted batch job 56642'.
+[Thu Mar  9 14:29:22 2023]
+Finished job 158.
+11 of 261 steps (4%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:29:22 2023]
+localrule zip_peDNA_subsamples:
+    input: intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq
+    output: intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq.gz, intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq.gz
+    jobid: 157
+    reason: Missing output files: intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq.gz, intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq.gz; Input files updated by another job: intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq, intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq
+    wildcards: sample=158_SRF
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gzip intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq
+        gzip intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq
+        
+[Thu Mar  9 14:29:46 2023]
+Finished job 237.
+12 of 261 steps (5%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:29:46 2023]
+rule map_subsampled_reads_to_sorted_MAGs:
+    input: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq.gz, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq.gz, input/MAGs_sorted/heligoland_combined_ev_producer_contigs.fa
+    output: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq.gz, intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq.gz
+    jobid: 236
+    reason: Missing output files: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq.gz, intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq.gz; Input files updated by another job: intermediate/reads/heligoland_true.mvome.reads1.subsample.fq.gz, intermediate/reads/heligoland_true.mvome.reads2.subsample.fq.gz
+    wildcards: sample=heligoland, label=ev_producer
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        bbmap.sh         ref=input/MAGs_sorted/heligoland_combined_ev_producer_contigs.fa         in=intermediate/reads/heligoland_true.mvome.reads1.subsample.fq.gz in2=intermediate/reads/heligoland_true.mvome.reads2.subsample.fq.gz         outm=intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq.gz outm2=intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq.gz          minidentity=0.9         nodisk
+        
+Submitted job 236 with external jobid 'Submitted batch job 56643'.
+[Thu Mar  9 14:29:53 2023]
+Finished job 77.
+13 of 261 steps (5%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:29:53 2023]
+rule map_subsampled_reads_to_sorted_MAGs:
+    input: intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq.gz, intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq.gz, input/MAGs_sorted/64_DCM_combined_ev_producer_contigs.fa
+    output: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq.gz, intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq.gz
+    jobid: 185
+    reason: Missing output files: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq.gz, intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq.gz; Input files updated by another job: intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq.gz, intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq.gz
+    wildcards: sample=64_DCM, label=ev_producer
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        bbmap.sh         ref=input/MAGs_sorted/64_DCM_combined_ev_producer_contigs.fa         in=intermediate/reads/64_DCM_true.mvome.reads1.subsample.fq.gz in2=intermediate/reads/64_DCM_true.mvome.reads2.subsample.fq.gz         outm=intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq.gz outm2=intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq.gz          minidentity=0.9         nodisk
+        
+Submitted job 185 with external jobid 'Submitted batch job 56644'.
+[Thu Mar  9 14:30:05 2023]
+Finished job 116.
+14 of 261 steps (5%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:30:05 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq.gz
+    output: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq
+    jobid: 115
+    reason: Missing output files: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq; Input files updated by another job: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq.gz
+    wildcards: sample=122_SRF, label=viral, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq.gz
+        
+[Thu Mar  9 14:30:06 2023]
+Finished job 115.
+15 of 261 steps (6%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:30:06 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq
+    output: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fa
+    jobid: 114
+    reason: Missing output files: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fa; Input files updated by another job: intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq
+    wildcards: sample=122_SRF, label=viral, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fq > intermediate/mapped_reads/122_SRF_mapped_to_viral_r1.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:30:15 2023]
+Finished job 157.
+16 of 261 steps (6%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:30:15 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq.gz
+    output: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq
+    jobid: 120
+    reason: Missing output files: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq; Input files updated by another job: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq.gz
+    wildcards: sample=122_SRF, label=viral, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq.gz
+        
+[Thu Mar  9 14:30:16 2023]
+Finished job 120.
+17 of 261 steps (7%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:30:17 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq
+    output: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fa
+    jobid: 119
+    reason: Missing output files: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fa; Input files updated by another job: intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq
+    wildcards: sample=122_SRF, label=viral, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fq > intermediate/mapped_reads/122_SRF_mapped_to_viral_r2.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:30:20 2023]
+Finished job 114.
+18 of 261 steps (7%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:30:20 2023]
+rule map_subsampled_reads_to_sorted_MAGs:
+    input: intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq.gz, intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq.gz, input/MAGs_sorted/158_SRF_combined_viral_contigs.fa
+    output: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq.gz, intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq.gz
+    jobid: 176
+    reason: Missing output files: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq.gz, intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq.gz; Input files updated by another job: intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq.gz, intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq.gz
+    wildcards: sample=158_SRF, label=viral
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        bbmap.sh         ref=input/MAGs_sorted/158_SRF_combined_viral_contigs.fa         in=intermediate/reads/158_SRF_true.mvome.reads1.subsample.fq.gz in2=intermediate/reads/158_SRF_true.mvome.reads2.subsample.fq.gz         outm=intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq.gz outm2=intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq.gz          minidentity=0.9         nodisk
+        
+Submitted job 176 with external jobid 'Submitted batch job 56645'.
+[Thu Mar  9 14:30:35 2023]
+Finished job 119.
+19 of 261 steps (7%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:30:35 2023]
+rule map_subsampled_reads_to_sorted_MAGs:
+    input: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq.gz, input/MAGs_sorted/122_MES_combined_gta_contigs.fa
+    output: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq.gz, intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq.gz
+    jobid: 87
+    reason: Missing output files: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq.gz, intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq.gz; Input files updated by another job: intermediate/reads/122_MES_true.mvome.reads1.subsample.fq.gz, intermediate/reads/122_MES_true.mvome.reads2.subsample.fq.gz
+    wildcards: sample=122_MES, label=gta
+    resources: tmpdir=/tmp, mem=20G, cpus=8, time=04:00:00
+
+
+        bbmap.sh         ref=input/MAGs_sorted/122_MES_combined_gta_contigs.fa         in=intermediate/reads/122_MES_true.mvome.reads1.subsample.fq.gz in2=intermediate/reads/122_MES_true.mvome.reads2.subsample.fq.gz         outm=intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq.gz outm2=intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq.gz          minidentity=0.9         nodisk
+        
+Submitted job 87 with external jobid 'Submitted batch job 56646'.
+[Thu Mar  9 14:31:10 2023]
+Finished job 185.
+20 of 261 steps (8%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:10 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq.gz
+    output: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq
+    jobid: 191
+    reason: Missing output files: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq; Input files updated by another job: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq.gz
+    wildcards: sample=64_DCM, label=ev_producer, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq.gz
+        
+[Thu Mar  9 14:31:11 2023]
+Finished job 236.
+21 of 261 steps (8%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:11 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq.gz
+    output: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq
+    jobid: 184
+    reason: Missing output files: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq; Input files updated by another job: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq.gz
+    wildcards: sample=64_DCM, label=ev_producer, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq.gz
+        
+[Thu Mar  9 14:31:12 2023]
+Finished job 176.
+22 of 261 steps (8%) done
+[Thu Mar  9 14:31:12 2023]
+Finished job 191.
+23 of 261 steps (9%) done
+[Thu Mar  9 14:31:12 2023]
+Finished job 87.
+24 of 261 steps (9%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:12 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq.gz
+    output: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq
+    jobid: 86
+    reason: Missing output files: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq; Input files updated by another job: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq.gz
+    wildcards: sample=122_MES, label=gta, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq.gz
+        
+
+[Thu Mar  9 14:31:12 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq.gz
+    output: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq
+    jobid: 91
+    reason: Missing output files: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq; Input files updated by another job: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq.gz
+    wildcards: sample=122_MES, label=gta, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq.gz
+        
+
+[Thu Mar  9 14:31:12 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq.gz
+    output: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq
+    jobid: 242
+    reason: Missing output files: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq; Input files updated by another job: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq.gz
+    wildcards: sample=heligoland, label=ev_producer, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq.gz
+        
+[Thu Mar  9 14:31:12 2023]
+Finished job 184.
+25 of 261 steps (10%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:12 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq.gz
+    output: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq
+    jobid: 180
+    reason: Missing output files: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq; Input files updated by another job: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq.gz
+    wildcards: sample=158_SRF, label=viral, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq.gz
+        
+Select jobs to execute...
+[Thu Mar  9 14:31:13 2023]
+Finished job 86.
+26 of 261 steps (10%) done
+
+[Thu Mar  9 14:31:13 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq
+    output: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fa
+    jobid: 190
+    reason: Missing output files: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fa; Input files updated by another job: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq
+    wildcards: sample=64_DCM, label=ev_producer, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fq > intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r2.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:31:13 2023]
+Finished job 91.
+27 of 261 steps (10%) done
+[Thu Mar  9 14:31:13 2023]
+Finished job 242.
+28 of 261 steps (11%) done
+[Thu Mar  9 14:31:13 2023]
+Finished job 180.
+29 of 261 steps (11%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:13 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq.gz
+    output: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq
+    jobid: 175
+    reason: Missing output files: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq; Input files updated by another job: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq.gz
+    wildcards: sample=158_SRF, label=viral, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq.gz
+        
+
+[Thu Mar  9 14:31:13 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq
+    output: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fa
+    jobid: 90
+    reason: Missing output files: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fa; Input files updated by another job: intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq
+    wildcards: sample=122_MES, label=gta, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fq > intermediate/mapped_reads/122_MES_mapped_to_gta_r2.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+
+[Thu Mar  9 14:31:13 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq
+    output: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fa
+    jobid: 183
+    reason: Missing output files: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fa; Input files updated by another job: intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq
+    wildcards: sample=64_DCM, label=ev_producer, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fq > intermediate/mapped_reads/64_DCM_mapped_to_ev_producer_r1.fa
+        
+Select jobs to execute...
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:31:13 2023]
+Finished job 175.
+30 of 261 steps (11%) done
+
+[Thu Mar  9 14:31:13 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq
+    output: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fa
+    jobid: 241
+    reason: Missing output files: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fa; Input files updated by another job: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq
+    wildcards: sample=heligoland, label=ev_producer, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fq > intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r2.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:31:25 2023]
+Finished job 90.
+31 of 261 steps (12%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:25 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq
+    output: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fa
+    jobid: 174
+    reason: Missing output files: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fa; Input files updated by another job: intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq
+    wildcards: sample=158_SRF, label=viral, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fq > intermediate/mapped_reads/158_SRF_mapped_to_viral_r1.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:31:25 2023]
+Finished job 241.
+32 of 261 steps (12%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:25 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq
+    output: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fa
+    jobid: 85
+    reason: Missing output files: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fa; Input files updated by another job: intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq
+    wildcards: sample=122_MES, label=gta, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fq > intermediate/mapped_reads/122_MES_mapped_to_gta_r1.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:31:25 2023]
+Finished job 190.
+33 of 261 steps (13%) done
+[Thu Mar  9 14:31:25 2023]
+Finished job 183.
+34 of 261 steps (13%) done
+Select jobs to execute...
+
+[Thu Mar  9 14:31:25 2023]
+localrule unzip_mapped_reads:
+    input: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq.gz
+    output: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq
+    jobid: 235
+    reason: Missing output files: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq; Input files updated by another job: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq.gz
+    wildcards: sample=heligoland, label=ev_producer, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        gunzip intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq.gz
+        
+
+[Thu Mar  9 14:31:25 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq
+    output: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fa
+    jobid: 179
+    reason: Missing output files: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fa; Input files updated by another job: intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq
+    wildcards: sample=158_SRF, label=viral, reads=2
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fq > intermediate/mapped_reads/158_SRF_mapped_to_viral_r2.fa
+        
+Select jobs to execute...
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134
+[Thu Mar  9 14:31:26 2023]
+Finished job 235.
+35 of 261 steps (13%) done
+
+[Thu Mar  9 14:31:26 2023]
+localrule convert_fastq_to_fasta:
+    input: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq
+    output: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fa
+    jobid: 234
+    reason: Missing output files: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fa; Input files updated by another job: intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq
+    wildcards: sample=heligoland, label=ev_producer, reads=1
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+        seqtk seq -a intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fq > intermediate/mapped_reads/heligoland_mapped_to_ev_producer_r1.fa
+        
+Activating conda environment: /home/dlueckin/envs/e0b05461448e77361e55541af54cf134

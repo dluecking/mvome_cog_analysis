@@ -4,7 +4,15 @@ sbatch_time: "04:00:00"
 top20_df: "input/top20_df.tsv"
 MIN_MAPPING_ID: 0.9
 COG_DB_PATH: "~/bioinf/dbs/COGdb/dmnd_db/combined_COG.dmnd"
-SUBSAMPLE_SIZE: 10000
+SUBSAMPLE_SIZE: 1000000
 samples:
 - heligoland
+- 122_DCM
+- 122_MES
+- 122_SRF
+- 158_DCM
+- 158_MES
 - 158_SRF
+- 64_DCM
+- 64_MES
+- 64_SRF
