@@ -74,7 +74,9 @@ rule fraggenescane_microbial:
     input:
         "input/microbial_reads/{sample}_microbial.reads{read}.1M.fa"
     output:
-        "intermediate/protein_fragments/microbial/{sample}_microbial_fraggene_r{read}.faa.faa",
+        "intermediate/protein_fragments/microbial/{sample}_microbial_fraggene_r{read}.faa"
+    params:
+        outfile="intermediate/protein_fragments/microbial/{sample}_microbial_fraggene_r{read}"
     resources:
         mem=config["sbatch_mem"],
         cpus=config["sbatch_cpus"],
@@ -82,17 +84,21 @@ rule fraggenescane_microbial:
     shell:
         """
         run_FragGeneScan.pl -genome={input} -complete=0 -train=illumina_5 \
-        -out {output} -thread={resources.cpus}
+        -out {params.outfile} -thread={resources.cpus}
         """
 
 rule blast_microbial:
     conda:
         "env/mvome_cog_analysis.yml"
     input:
-        "intermediate/protein_fragments/microbial/{sample}_microbial_fraggene_r{read}.faa.faa"
+        "intermediate/protein_fragments/microbial/{sample}_microbial_fraggene_r{read}.faa"
     output:
         "intermediate/blast_out/microbial/{sample}_r{read}_blast.out"
     params: COG_DB=config["COG_DB_PATH"]
+    resources:
+        mem=config["sbatch_mem"],
+        cpus=config["sbatch_cpus"],
+        time=config["sbatch_time"]
     shell:
         """
         diamond blastp --query {input} \
@@ -111,10 +117,14 @@ rule blast_peDNA:
     conda:
         "env/mvome_cog_analysis.yml"
     input:
-        "intermediate/protein_fragments/peDNA/{sample}_mapped_to_{label}_r{read_file}.faa.faa"
+        "intermediate/protein_fragments/peDNA/{sample}_mapped_to_{label}_r{read_file}.faa"
     output:
         "intermediate/blast_out/peDNA/{sample}_mapped_to_{label}_r{read_file}.out"
     params: COG_DB=config["COG_DB_PATH"]
+    resources:
+        mem=config["sbatch_mem"],
+        cpus=config["sbatch_cpus"],
+        time=config["sbatch_time"]
     shell:
         """
         diamond blastp --query {input} \
@@ -132,7 +142,9 @@ rule fraggenescane_peDNA:
     input:
         "intermediate/mapped_reads/{sample}_mapped_to_{label}_r{reads}.fa"
     output:
-        "intermediate/protein_fragments/peDNA/{sample}_mapped_to_{label}_r{reads}.faa.faa"
+        "intermediate/protein_fragments/peDNA/{sample}_mapped_to_{label}_r{reads}.faa"
+    params:
+        outfile="intermediate/protein_fragments/peDNA/{sample}_mapped_to_{label}_r{reads}"
     resources:
         mem=config["sbatch_mem"],
         cpus=config["sbatch_cpus"],
@@ -140,7 +152,7 @@ rule fraggenescane_peDNA:
     shell:
         """
         run_FragGeneScan.pl -genome={input} -complete=0 -train=illumina_5 \
-        -out {output} -thread {resources.cpus}
+        -out {params.outfile} -thread {resources.cpus}
         """
 
 rule convert_fastq_to_fasta:
