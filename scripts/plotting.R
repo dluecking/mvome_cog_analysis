@@ -54,17 +54,28 @@ data$perc <- data$rel * 100
 to_plot <- data %>% filter(label != "microbial")
 microbial_df <- data %>% filter(label == "microbial")
 
-to_plot$delta_to_microbial <- 0
-
+to_plot$fold_change <- 0
+to_plot$fold_color <- ""
 
 for(i in 1:nrow(to_plot)){
-    to_plot$delta_to_microbial[i] <- to_plot$perc[i] - microbial_df$perc[microbial_df$LETTER == to_plot$LETTER[i]]
+    # check if 0
+    if(to_plot$rel[i] == 0 | microbial_df$rel[microbial_df$LETTER == to_plot$LETTER[i]] == 0){
+        to_plot$fold_change[i] <- 0
+        to_plot$fold_color[i] <- "blue"
+    
+        # check which is larger
+    }else if(to_plot$rel[i] >= microbial_df$rel[microbial_df$LETTER == to_plot$LETTER[i]] ){
+        to_plot$fold_change[i] <- to_plot$rel[i] / microbial_df$rel[microbial_df$LETTER == to_plot$LETTER[i]] - 1
+        to_plot$fold_color[i] <- "red"
+    }else{
+        to_plot$fold_change[i] <- microbial_df$rel[microbial_df$LETTER == to_plot$LETTER[i]] / to_plot$rel[i] * (-1) + 1
+        to_plot$fold_color[i] <- "blue"
+    }
 }
 
-to_plot$delta_color <- ifelse(to_plot$delta_to_microbial >= 0, 'red', 'blue')
+# plot --------------------------------------------------------------------
 
-
-ggplot(to_plot, aes(x = DESCRIPTION, y = delta_to_microbial, fill = delta_color)) +
+ggplot(to_plot, aes(x = DESCRIPTION, y = fold_change, fill = fold_color)) +
     geom_bar(stat = 'identity', color = 'black') +
     geom_hline(yintercept = 0) +
     theme_bw() +
@@ -90,6 +101,18 @@ ggsave(filename = "plots/cog_barplot.png", last_plot(), width = 7, height = 4)
 ggsave(filename = "plots/cog_barplot.svg", last_plot(), width = 7, height = 4)
 
 
+ 
+# # testing -----------------------------------------------------------------
+# 
+# ggplot(to_plot[to_plot$label == "ev"], aes(x = to_plot$perc[to_plot$label == "ev"], y = microbial_df$perc)) +
+#     geom_point()
+# 
+# 
+# ggplot(to_plot[to_plot$label == "viral"], aes(x = to_plot$perc[to_plot$label == "viral"], y = microbial_df$perc)) +
+#     geom_point()
+# 
+# ggplot(to_plot[to_plot$label == "gta"], aes(x = to_plot$perc[to_plot$label == "gta"], y = microbial_df$perc)) +
+#     geom_point()
 
 
 

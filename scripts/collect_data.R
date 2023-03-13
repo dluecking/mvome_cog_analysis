@@ -33,7 +33,7 @@ for(file in files){
     file_long = paste0("intermediate/blast_out/microbial/", file)
     if(file.info(file_long)$size  > 0){
         tmp_df <- fread(file_long, select = c("V2"))
-        tmp_df$origin <- file
+        tmp_df$origin <- paste0(file, "_microbial")
         blast_df <- rbind(blast_df, tmp_df)
     }
     
@@ -48,7 +48,7 @@ for(file in files){
     file_long = paste0("intermediate/blast_out/peDNA/", file)
     if(file.info(file_long)$size  > 0){
         tmp_df <- fread(file_long, select = c("V2"))
-        tmp_df$origin <- paste0(file, "_microbial")
+        tmp_df$origin <- file
         blast_df <- rbind(blast_df, tmp_df)
     }
 }

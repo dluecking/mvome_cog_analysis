@@ -6,7 +6,9 @@
 
 
 **peDNA reads (zipped):**
-- heligoland peDNA reads that ran through mviest and were marked as "true.mvome" from the four samples (the four CsCl ones) combined into on sample.
+
+
+- heligoland peDNA reads from the four samples (the four CsCl ones) combined into on sample.
 - tara oceans virome fraction for the 9 stations
 
 

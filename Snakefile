@@ -184,8 +184,8 @@ rule map_subsampled_reads_to_sorted_MAGs:
     conda:
         "env/mvome_cog_analysis.yml"
     input:
-        r1="intermediate/reads/{sample}_true.mvome.reads1.subsample.fq.gz",
-        r2="intermediate/reads/{sample}_true.mvome.reads2.subsample.fq.gz",
+        r1="intermediate/reads/{sample}.all-input.reads1.subsample.fq.gz",
+        r2="intermediate/reads/{sample}.all-input.reads2.subsample.fq.gz",
         reference="input/MAGs_sorted/{sample}_combined_{label}_contigs.fa"
     output:
         r1="intermediate/mapped_reads/{sample}_mapped_to_{label}_r1.fq.gz",
@@ -211,11 +211,11 @@ rule subsample_reads:
     conda:
         "env/mvome_cog_analysis.yml"
     input:
-        r1="input/reads/{sample}_true.mvome.reads1.fq.gz",
-        r2="input/reads/{sample}_true.mvome.reads2.fq.gz"
+        r1="input/reads/{sample}.all-input.reads1.fq.gz",
+        r2="input/reads/{sample}.all-input.reads2.fq.gz"
     output:
-        r1="intermediate/reads/{sample}_true.mvome.reads1.subsample.fq",
-        r2="intermediate/reads/{sample}_true.mvome.reads2.subsample.fq"
+        r1="intermediate/reads/{sample}.all-input.reads1.subsample.fq",
+        r2="intermediate/reads/{sample}.all-input.reads2.subsample.fq"
     threads: 8
     params: SUBSAMPLE_SIZE=config["SUBSAMPLE_SIZE"]
     log: "log/subsample_reads.{sample}.log"
@@ -230,11 +230,11 @@ rule subsample_reads:
 
 rule zip_peDNA_subsamples:
     input:
-        r1="intermediate/reads/{sample}_true.mvome.reads1.subsample.fq",
-        r2="intermediate/reads/{sample}_true.mvome.reads2.subsample.fq"
+        r1="intermediate/reads/{sample}.all-input.reads1.subsample.fq",
+        r2="intermediate/reads/{sample}.all-input.reads2.subsample.fq"
     output:
-        r1="intermediate/reads/{sample}_true.mvome.reads1.subsample.fq.gz",
-        r2="intermediate/reads/{sample}_true.mvome.reads2.subsample.fq.gz"
+        r1="intermediate/reads/{sample}.all-input.reads1.subsample.fq.gz",
+        r2="intermediate/reads/{sample}.all-input.reads2.subsample.fq.gz"
     threads: 8
     shell:
         """
