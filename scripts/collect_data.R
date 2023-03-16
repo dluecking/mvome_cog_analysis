@@ -10,8 +10,6 @@ library(dplyr)
 # prepare template df -----------------------------------------------------
 
 COG_template_df <- fread("helper_files/template_classifier_count.tsv")
-# COG_template_df <- fread("~/template_classifier_count.tsv")
-
 
 # repeat the DF, since we need to check for the origin (later facet wrap) -
 repeat_df <- function(d, n) {
@@ -105,3 +103,69 @@ COG_template_df$rel[COG_template_df$label == "microbial"] <-
     COG_template_df$COUNT[COG_template_df$label == "microbial"] / sum(COG_template_df$COUNT[COG_template_df$label == "microbial"])
 
 fwrite(COG_template_df, "intermediate/collected_data.tsv")
+
+
+
+# additionally, check for transposases specifically -----------------------
+
+# load def again
+def <- fread("helper_files/cog-20.def.tab")
+
+# transposases get a new letter
+def$V2[def$V2 == "X"] <- "X_non_trans"
+def$V2[str_detect(def$V3, pattern = "transposase")] <- "X_trans"
+def$V2[str_detect(def$V3, pattern = "Transposase")] <- "X_trans"
+
+# adding new letter
+blast_df$letter <- def$V2[match(blast_df$COG, def$V1)]
+
+# do the other stuff again
+df <- blast_df %>% 
+    select(origin, letter) %>% 
+    group_by(origin, letter) %>% 
+    tally()
+
+# create fake COG template df with X_trans and X_non_trans
+COG_template_df <- fread("helper_files/template_classifier_count.tsv") %>% 
+    filter(LETTER != "X")
+COG_template_df <- rbind(COG_template_df, data.table(LETTER = "X_trans", COUNT = 0, COLOR = "#9CFC9C", DESCRIPTION = "Mobilome: transposons only"))
+COG_template_df <- rbind(COG_template_df, data.table(LETTER = "X_non_trans", COUNT = 0, COLOR = "#9CFC9C", DESCRIPTION = "Mobilome: without transposons"))
+
+
+# repeat the DF, since we need to check for the origin (later facet wrap) -
+repeat_df <- function(d, n) {
+    return(do.call("rbind", replicate(n, d, simplify = FALSE)))
+}
+
+labels = c("ev", "gta", "viral", "microbial")
+
+COG_template_df <- repeat_df(COG_template_df, length(labels)) 
+COG_template_df$label <- rep(labels, each = nrow(COG_template_df) / length(labels))
+
+
+# fill in data ------------------------------------------------------------
+
+for(i in 1:nrow(COG_template_df)){
+    COG_template_df$COUNT[i] <- df %>% 
+        filter(str_detect(string = origin, pattern = COG_template_df$label[i])) %>%     # matches origin
+        filter(str_detect(string = letter, pattern = COG_template_df$LETTER[i])) %>%    # matches label
+        ungroup() %>%                                                                   # ungroup, otherwise the origin appears in the select
+        select(n) %>% 
+        summarise(total = sum(n)) %>% 
+        pull()
+}
+
+
+COG_template_df$rel[COG_template_df$label == "ev"] <- 
+    COG_template_df$COUNT[COG_template_df$label == "ev"] / sum(COG_template_df$COUNT[COG_template_df$label == "ev"])
+
+COG_template_df$rel[COG_template_df$label == "viral"] <- 
+    COG_template_df$COUNT[COG_template_df$label == "viral"] / sum(COG_template_df$COUNT[COG_template_df$label == "viral"])
+
+COG_template_df$rel[COG_template_df$label == "gta"] <- 
+    COG_template_df$COUNT[COG_template_df$label == "gta"] / sum(COG_template_df$COUNT[COG_template_df$label == "gta"])
+
+COG_template_df$rel[COG_template_df$label == "microbial"] <- 
+    COG_template_df$COUNT[COG_template_df$label == "microbial"] / sum(COG_template_df$COUNT[COG_template_df$label == "microbial"])
+
+fwrite(COG_template_df, "intermediate/collected_data_with_transposons.tsv")

@@ -62,7 +62,7 @@ for(i in 1:nrow(to_plot)){
     if(to_plot$rel[i] == 0 | microbial_df$rel[microbial_df$LETTER == to_plot$LETTER[i]] == 0){
         to_plot$fold_change[i] <- 0
         to_plot$fold_color[i] <- "blue"
-    
+        
         # check which is larger
     }else if(to_plot$rel[i] >= microbial_df$rel[microbial_df$LETTER == to_plot$LETTER[i]] ){
         to_plot$fold_change[i] <- to_plot$rel[i] / microbial_df$rel[microbial_df$LETTER == to_plot$LETTER[i]] - 1
@@ -101,7 +101,7 @@ ggsave(filename = "plots/cog_barplot.png", last_plot(), width = 7, height = 4)
 ggsave(filename = "plots/cog_barplot.svg", last_plot(), width = 7, height = 4)
 
 
- 
+
 # # testing -----------------------------------------------------------------
 # 
 # ggplot(to_plot[to_plot$label == "ev"], aes(x = to_plot$perc[to_plot$label == "ev"], y = microbial_df$perc)) +
@@ -113,6 +113,5 @@ ggsave(filename = "plots/cog_barplot.svg", last_plot(), width = 7, height = 4)
 # 
 # ggplot(to_plot[to_plot$label == "gta"], aes(x = to_plot$perc[to_plot$label == "gta"], y = microbial_df$perc)) +
 #     geom_point()
-
 
 
